@@ -1,0 +1,270 @@
+:root {
+  --primary: #002366;   /* deep navy */
+  --secondary: #FFD700; /* gold accent */
+  --text: #333333;      /* dark gray for body text */
+  --bg: #FFFFFF;        /* clean white background */
+  --bg-alt: #e9f3e8;        /* alt background */
+}
+
+body {
+    /* background-color: #e9f3e8; */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%2392aca2' fill-opacity='0.53'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+p, li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.container {
+  /* max-width: 960px; */
+  /* margin: 2rem auto; */
+  padding: 0 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--primary) 10%, var(--bg-alt) 90%);
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+.hero p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+
+/* == Header + Navigation == */
+header {
+  /* background-color: var(--primary); */
+  padding: 1rem 0;
+}
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 1rem;           space between logo and nav */
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.main-nav a {
+  color: var(--text);
+  /* background: var(--bg-alt); */
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+/* Dropdown container */
+.has-dropdown {
+  position: relative;
+}
+
+/* Hide dropdown by default */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;                 /* immediately below the parent link */
+  left: 0;
+  background: var(--primary);
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  list-style: none;
+  margin: 0;
+}
+
+/* Each dropdown item */
+.dropdown li {
+  margin: 0;
+}
+.dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--bg);
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.dropdown a:hover {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+/* Show dropdown on hover */
+.has-dropdown:hover > .dropdown {
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  margin: 0.5rem 0;
+}
+
+/* blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+  color: var(--text);
+  font-style: italic;
+  margin: 1rem 0;
+} */
+
+a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+button {
+  background-color: var(--primary);
+  color: var(--bg);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+button:hover {
+  background-color: darken(var(--primary), 10%);
+} 
+
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+@media (min-width: 600px) {
+  .card-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+}
+.card {
+  background: var(--bg);
+  border: 1px solid var(--text);
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* == Two-Column Utility == */
+.two-col {
+  display: grid;
+  gap: 2rem;
+  margin: 2rem 0;
+  background: var(--bg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+@media (min-width: 768px) {
+  .two-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* == FAQ Styling == */
+.faq {
+  background: var(--bg-alt);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.faq h2 {
+  margin-top: 0;
+  color: var(--primary);
+}
+.faq dl {
+  margin: 1rem 0;
+}
+.faq dt {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.faq dd {
+  margin: 0 0 1rem 1rem;
+  line-height: 1.5;
+}
+
+/* == Footer Styles == */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--primary);
+  color: var(--bg);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 120px;
+  height: auto;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav a {
+  color: var(--bg);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+  opacity: 0.75;
+}
+
+.footer p {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+  color: var(--bg);
+}
+
+/* Make sure the footer sticks to bottom when content is short */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+}
