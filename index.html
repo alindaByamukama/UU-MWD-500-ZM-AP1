@@ -4,17 +4,106 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <title>A Financial Institution</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Better Bank – Home</title>
 </head>
 
 <body>
-    <h1>A Financial Institution</h1>
-    <p>
-        Welcome to our financial institution. 
-        We offer a range of services to help you manage your finances effectively.
-    </p>
-    <p>Current Time (UTC): <span id="utc-time"></span></p>
+
+    <!-- Header + Navigation -->
+    <header>
+        <div class="container header-inner">
+            <h1>Better Bank</h1>
+            <nav role="navigation">
+                <ul class="main-nav">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about/about.html">About</a></li>
+    
+                    <!-- Products Dropdown -->
+                    <li class="has-dropdown">
+                        <a href="products/personal-banking.html">Products</a>
+                        <ul class="dropdown">
+                            <li><a href="products/personal-banking.html">Personal Banking</a></li>
+                            <li><a href="products/business-banking.html">Business Banking</a></li>
+                            <li><a href="products/investment.html">Investment</a></li>
+                        </ul>
+                    </li>
+    
+                    <!-- Investors Dropdown -->
+                    <li class="has-dropdown">
+                        <a href="investor-relations/annual-reports.html">Investors</a>
+                        <ul class="dropdown">
+                            <li><a href="investor-relations/annual-reports.html">Annual Reports</a></li>
+                            <li><a href="investor-relations/shareholder-news.html">Shareholder News</a></li>
+                        </ul>
+                    </li>
+    
+                    <li><a href="resources/education.html">Resources</a></li>
+                    <li><a href="contact/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- End of Header + Navigation -->      
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="container">
+            <h2>Welcome to Better Bank</h2>
+            <p><em>Your trusted partner in financial growth.</em></p>
+        </div>
+    </section>
+
+    <!-- Services Card Grid -->
+    <main>
+        <section class="features">
+            <div class="container">
+                <h2>Our Services</h2>
+                <ul class="card-grid">
+                    <li class="card">
+                        <h3>Personal Banking</h3>
+                        <p>Everyday accounts & cards.</p>
+                    </li>
+                    <li class="card">
+                        <h3>Business Solutions</h3>
+                        <p>Customized corporate services.</p>
+                    </li>
+                    <li class="card">
+                        <h3>Investment Advice</h3>
+                        <p>Grow your wealth wisely.</p>
+                    </li>
+                    <li class="card">
+                        <h3>24/7 Support</h3>
+                        <p>We’re here whenever you need us.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer">
+            <!-- Logo -->
+            <img src="./assets/logo/light-logo-bb.png" alt="Better Bank logo" class="footer-logo">
+    
+            <!-- Optional footer navigation -->
+            <ul class="footer-nav">
+                <li><a href=".index.html" class="active">Home</a></li>
+                <li><a href="./about/about.html">About</a></li>
+                <li><a href="./contact/contact.html">Contact</a></li>
+                <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+    
+            <!-- Legal & time -->
+            <p>Better Bank is a registered trademark of Better Bank Inc.</p>
+            <p>&copy; 2025 Better Bank. All rights reserved.</p>
+            <p>Current Time (UTC): <span id="utc-time"></span></p>
+        </div>
+    </footer>
+      
+
 </body>
 <script src="./scripts/script.js"></script>
+
 </html>
