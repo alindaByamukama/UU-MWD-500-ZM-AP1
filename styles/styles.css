@@ -68,7 +68,7 @@ header {
   align-items: center;
   /* gap: 1rem;           space between logo and nav */
 }
-
+/* navigation */
 .main-nav {
   display: flex;
   gap: 1.5rem;
@@ -78,9 +78,83 @@ header {
   justify-content: center;
 }
 
+/* Mobile nav toggle button (hidden by default, shown on small screens) */
+.nav-toggle {
+  display: none;
+  background: var(--primary);
+  color: var(--bg);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+/* Responsive: stack nav vertically on small screens */
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    width: 100%;
+    /* Remove display: none by default, show by default */
+    display: flex;
+    background: var(--bg);
+    position: static;
+    box-shadow: none;
+    padding: 1rem 0 0 0;
+  }
+  .main-nav.closed {
+    display: none;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .has-dropdown .dropdown {
+    position: static;
+    min-width: 0;
+    box-shadow: none;
+    background: var(--bg-alt);
+    border-radius: 0;
+    padding: 0.25rem 0;
+  }
+  .dropdown a {
+    color: var(--primary);
+    background: transparent;
+    padding-left: 2rem;
+  }
+}
+
+/* Desktop dropdown */
+@media (min-width: 769px) {
+  .main-nav {
+    flex-direction: row;
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    display: flex !important;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .has-dropdown .dropdown {
+    position: absolute;
+    min-width: 200px;
+    background: var(--primary);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 0.5rem 0;
+  }
+  .dropdown a {
+    color: var(--bg);
+    padding-left: 1rem;
+  }
+}
+
 .main-nav a {
   color: var(--text);
-  /* background: var(--bg-alt); */
   font-weight: bold;
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -103,7 +177,7 @@ header {
 .dropdown {
   display: none;
   position: absolute;
-  top: 100%;                 /* immediately below the parent link */
+  top: 100%;
   left: 0;
   background: var(--primary);
   border-radius: 4px;
@@ -130,9 +204,16 @@ header {
   color: var(--primary);
 }
 
-/* Show dropdown on hover */
+/* Show dropdown on hover (desktop) */
 .has-dropdown:hover > .dropdown {
   display: block;
+}
+
+/* Show dropdown on click (mobile) */
+@media (max-width: 768px) {
+  .has-dropdown.open > .dropdown {
+    display: block;
+  }
 }
 
 ul {
@@ -142,14 +223,6 @@ ul {
 li {
   margin: 0.5rem 0;
 }
-
-/* blockquote {
-  border-left: 4px solid var(--primary);
-  padding-left: 1rem;
-  color: var(--text);
-  font-style: italic;
-  margin: 1rem 0;
-} */
 
 a {
   color: var(--secondary);
@@ -167,9 +240,9 @@ button {
   font-size: 1rem;
 }
 button:hover {
-  background-color: darken(var(--primary), 10%);
-} 
-
+  background-color: #00194d; /* fallback for darken */
+}
+/* Card Grid */
 .card-grid {
   display: grid;
   gap: 1.5rem;
