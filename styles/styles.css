@@ -15,7 +15,16 @@ body {
     background-color: var(--bg);
     color: var(--text);
     font-family: 'Segoe UI', sans-serif;
+    /* Make sure the footer sticks to bottom when content is short */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
+main {
+  flex: 1;
+}
+
 
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
@@ -259,12 +268,9 @@ button:hover {
   color: var(--bg);
 }
 
-/* Make sure the footer sticks to bottom when content is short */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-main {
-  flex: 1;
+.feature-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
 }
